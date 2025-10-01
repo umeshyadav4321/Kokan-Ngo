@@ -77,10 +77,34 @@ background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/backg
 
 .about-content img {
   flex: 1;
-  min-width: 250px;
-  max-width: 600px;
+  min-width: 200px; /* reduced min-width for small screens */
+  max-width: 100%; /* allow shrinking */
+  width: 300px; /* default size */
   border-radius: 10px;
+  height: auto; /* maintain aspect ratio */
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content img {
+    width: 200px; /* smaller on tablets */
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content img {
+    width: 150px; /* smaller on mobile */
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+  }
+}
+
 /* Our Work Section */
 .work {
   padding: 80px 20px;
